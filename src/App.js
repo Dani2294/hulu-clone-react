@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './components/Header';
+import NavBar from './components/NavBar';
+import Results from './components/Results';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [page, setPage] = useState(1);
+
+	const handlePagination = (type, totalPages) => {
+		if (type === 'prev') {
+			if (page === 1) return;
+			setPage(page - 1);
+			//console.log(page);
+		} else if (type === 'next') {
+			if (page === totalPages) return;
+			setPage(page + 1);
+			//console.log(page);
+		}
+	};
+
+	return (
+		<Router>
+			<div>
+				<Header setPage={setPage} />
+				<NavBar setPage={setPage} />
+				<Route path='/:id'>
+					<Results page={page} handlePagination={handlePagination} />
+				</Route>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
