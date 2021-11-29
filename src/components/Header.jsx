@@ -13,7 +13,9 @@ function Header({ setPage }) {
 	return (
 		<header className='flex flex-col sm:flex-row justify-between items-center m-5 h-auto max-w-screen-3xl mx-auto'>
 			<div className='flex flex-grow justify-evenly max-w-2xl'>
-				<HeaderItem title='HOME' Icon={HomeIcon} />
+				<Link to='/fetchTrending'>
+					<HeaderItem title='HOME' Icon={HomeIcon} />
+				</Link>
 				<HeaderItem title='TRENDING' Icon={LightningBoltIcon} />
 				<HeaderItem title='VERIFIED' Icon={BadgeCheckIcon} />
 				<HeaderItem title='COLLECTIONS' Icon={CollectionIcon} />

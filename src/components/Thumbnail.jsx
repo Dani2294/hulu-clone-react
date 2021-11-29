@@ -1,35 +1,28 @@
-import { ThumbUpIcon } from '@heroicons/react/outline';
+import { InformationCircleIcon } from '@heroicons/react/outline';
 
-function Thumbnail({ result }) {
+function Thumbnail({ result, handleModal }) {
 	const imgBaseUrl = 'https://image.tmdb.org/t/p/original/';
 	return (
-		<div className='group cursor-pointer transition duration-200 transform sm:hover:scale-105'>
-			<div className='relative overflow-hidden'>
-				{/* <Image
-					layout='responsive'
-					src={`${imgBaseUrl}${result.backdrop_path || result.poster_path}`}
-					height={1080}
-					width={1920}
-				/> */}
+		<div className='group cursor-pointer'>
+			<div
+				onClick={() => handleModal(result)}
+				className='relative overflow-hidden transition duration-300 transform md:hover:scale-105'>
 				<img
 					src={`${imgBaseUrl}${result.backdrop_path || result.poster_path}`}
 					alt={result.original_title}
-					className='h-full w-full'
+					className='h-full w-full object-contain rounded-xl'
 				/>
-				<div className='absolute inset-0 p-3 bg-white text-gray-600 transition transform translate-y-full group-hover:translate-y-0 overflow-auto'>
+				<button className='hidden absolute bottom-2 right-2 group-hover:flex items-center py-1 px-2 bg-[#06202A] rounded-xl border-2 border-white z-20'>
+					See More <InformationCircleIcon className='h-5 ml-1' />
+				</button>
+				{/* <div className='absolute inset-0 p-3 bg-white text-gray-600 transition transform translate-y-full group-hover:translate-y-0 overflow-auto'>
 					{result.overview}
-				</div>
+				</div> */}
 			</div>
 			<div className='p-2'>
-				{/* <p className='truncate max-w-md'>{result.overview}</p> */}
-				<h3 className='mt-2 text-2xl text-white transition-all group-hover:font-bold'>
+				<h3 className='mt-1 text-2xl text-white transition-all'>
 					{result.title || result.original_title || result.original_name}
 				</h3>
-				<p className='flex items-center opacity-0 group-hover:opacity-100'>
-					{result.media_type && `${result.media_type} •`}{' '}
-					{result.release_date || result.first_air_date} •{' '}
-					<ThumbUpIcon className='h-5 mx-2' /> {result.vote_count}
-				</p>
 			</div>
 		</div>
 	);
