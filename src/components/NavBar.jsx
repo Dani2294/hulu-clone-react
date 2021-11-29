@@ -15,8 +15,8 @@ function NavBar({ setPage }) {
 					</Link>
 				))}
 			</div>
-			<div className='3xl:hidden absolute top-0 right-0 bg-gradient-to-l from-[#06202A] h-10 w-2/12' />
-			<div className='3xl:hidden absolute top-0 left-0 bg-gradient-to-r from-[#06202A] h-10 w-1/12' />
+			<div className='3xl:hidden absolute top-0 right-0 bg-gradient-to-l from-green1 h-10 w-2/12' />
+			<div className='3xl:hidden absolute top-0 left-0 bg-gradient-to-r from-green1 h-10 w-1/12' />
 		</nav>
 	);
 }

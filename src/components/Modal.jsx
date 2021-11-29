@@ -41,10 +41,10 @@ function Modal({ movieData, setModal, modal }) {
 		<div
 			ref={modalRef}
 			onClick={closeModalBgClick}
-			className='fixed inset-0 h-full w-full bg-[#06202A] bg-opacity-75 flex justify-center items-center'>
+			className='fixed inset-0 h-full w-full bg-green1 bg-opacity-75 flex justify-center items-center'>
 			<animated.div
 				style={props}
-				className='modal-wrapper w-11/12 lg:w-9/12 2xl:w-5/12 h-[95vh] grid grid-rows-2 relative rounded-xl bg-[#051c25] p-5 pb-8 overflow-hidden'>
+				className='modal-wrapper w-11/12 lg:w-9/12 2xl:w-5/12 h-screen95 grid grid-rows-2 relative rounded-xl bg-green2 p-5 pb-8 overflow-hidden'>
 				<button
 					onClick={() =>
 						setModal((prevState) => ({
@@ -52,7 +52,7 @@ function Modal({ movieData, setModal, modal }) {
 							data: movieData,
 						}))
 					}
-					className='absolute z-10 top-8 right-8 flex items-center justify-center p-2 rounded-full bg-[#051c25] cursor-pointer'>
+					className='absolute z-10 top-8 right-8 flex items-center justify-center p-2 rounded-full bg-green2 cursor-pointer'>
 					<XIcon className='h-5' />
 				</button>
 				<img
