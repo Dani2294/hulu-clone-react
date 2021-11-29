@@ -12,7 +12,7 @@ function Thumbnail({ result, handleModal }) {
 					alt={result.original_title}
 					className='h-full w-full object-contain rounded-xl'
 				/>
-				<button className='hidden absolute bottom-2 right-2 group-hover:flex items-center py-1 px-2 bg-green1 rounded-xl border-2 border-white z-20'>
+				<button className='opacity-0 group-hover:opacity-100 absolute bottom-2 right-2 flex items-center py-1 px-2 bg-green1 rounded-xl border-2 border-white z-20'>
 					See More <InformationCircleIcon className='h-5 ml-1' />
 				</button>
 				{/* <div className='absolute inset-0 p-3 bg-white text-gray-600 transition transform translate-y-full group-hover:translate-y-0 overflow-auto'>
