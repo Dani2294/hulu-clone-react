@@ -24,6 +24,9 @@ function App() {
 			<div>
 				<Header setPage={setPage} />
 				<NavBar setPage={setPage} />
+				<Route path='/' exact>
+					<Results page={page} handlePagination={handlePagination} />
+				</Route>
 				<Route path='/:id'>
 					<Results page={page} handlePagination={handlePagination} />
 				</Route>
