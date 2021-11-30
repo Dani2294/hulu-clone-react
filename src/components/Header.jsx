@@ -13,7 +13,7 @@ function Header({ setPage }) {
 	return (
 		<header className='flex flex-col sm:flex-row justify-between items-center m-5 h-auto max-w-screen-3xl mx-auto'>
 			<div className='flex flex-grow justify-evenly max-w-2xl'>
-				<Link to='/fetchTrending'>
+				<Link to='/'>
 					<HeaderItem title='HOME' Icon={HomeIcon} />
 				</Link>
 				<HeaderItem title='TRENDING' Icon={LightningBoltIcon} />
@@ -22,7 +22,7 @@ function Header({ setPage }) {
 				<HeaderItem title='SEARCH' Icon={SearchIcon} />
 				<HeaderItem title='ACCOUNT' Icon={UserIcon} />
 			</div>
-			<Link to='/fetchTrending'>
+			<Link to='/'>
 				<img
 					onClick={() => setPage(1)}
 					src='https://links.papareact.com/ua6'

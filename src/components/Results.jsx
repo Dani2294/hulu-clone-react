@@ -30,7 +30,10 @@ function Results({ page, handlePagination }) {
 	};
 
 	return (
-		<main className='px-5 my-10 max-w-screen-3xl mx-auto'>
+		<main
+			className={`px-5 my-10 max-w-screen-3xl mx-auto ${
+				modal.isOpen ? 'stop-scrolling' : ''
+			}`}>
 			<div className='sm:grid md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-5 space-y-5 md:space-y-0'>
 				{results.map((result) => {
 					if (!result.backdrop_path || !result.poster_path) return null;
